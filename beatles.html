@@ -8,9 +8,9 @@
     <link rel="icon" href="">
 </head>
 <body>
-    <header>
-        <h1 style="font-size: 4rem">THE BEATLES</h1>
-        <p style="font-size: 2rem;">A Tribute to the Legendary Band</p>
+    <header class="header">
+        <h1>THE BEATLES</h1>
+        <p>A Tribute to the Legendary Band</p>
     </header>
     <main class="main-content">
         <section class="band-members">
@@ -48,24 +48,46 @@
 
         <section class="timeline">
             <h2>Historical Timeline</h2>
-            <h3></h3>
-            <p>1960: The band forms in Liverpool</p>
-            <p>1962: First single release</p>
-            <p>1963: Rise to fame in the UK</p>
-            <p>1964: International breakthrough</p>
-            <p>1970: Band Dissolution</p>
+            <div class="timeline-grid">
+                <div class="timeline-item">
+                    <h3>1960</h3>
+                    <p>The band forms in Liverpool</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>1962</h3> 
+                    <p>First single release</p>
+                </div>
+                <div class="timeline-item">  
+                    <h3>1963</h3>  
+                    <p>Rise to fame in the UK</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>1964</h3>
+                    <p>International breakthrough</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>1970</h3>
+                    <p>Band Dissolution</p>
+                </div>
+            </div>
         </section>
     </main>
     <footer class="newsletter">
-        <h1>Stay Updated</h1>
-        <h2>Subscribe to our newsletter for music related news and events</h2>
+        <div class="form">
+            <h1>Stay Updated</h1>
+            <h2>Subscribe to our newsletter for music related news and events</h2>
+        </div>    
         <form>
-            <label>Name:</label>
-            <input type="text">
-            <label>Email:</label>
-            <input type="email">
-            <button type="submit">Subscribe</button>
-        </form>
+            <div>
+                <label for="name">Name:</label>   
+                <input type="text" id="name">
+            </div> 
+            <div>
+                <label>Email:</label>
+                <input type="email" id="email">
+            </div>    
+                <button type="submit">Subscribe</button>
+            </form>
     </footer>
 </body>
 </html>

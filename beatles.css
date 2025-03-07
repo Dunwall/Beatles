@@ -14,21 +14,19 @@
 }
 html{
     scroll-behavior: smooth;
+    font-family: 'Poppins', serif;
 }
 body{
     background-color: beige;
-    font-family: 'Poppins';
     line-height: 1.6;
     color: #141313;
 }
 
 p{
     font-size:var(--p);
-}
-
-p{
     font-family: sans-serif;
 }
+
 a{
     font-size: larger;
     color: rgb(255, 255, 255);
@@ -37,30 +35,47 @@ a{
 a:hover{
     color: rgb(224, 16, 16);
     text-decoration: underline;
+    background-color: grey;
+    border-radius: 5px;
 }
 
 /* HEADER SECTION */
-nav ul{
-    list-style: none;
-    display: flex;
-}
-nav ul li a{
-    font-weight: 1000;
-}
-nav ul li{
-    margin-left: 1.2rem;
-}
 header{
     background-color: #000;
     color: #e0d3d3;
     padding: 1.5rem;
     top: 0;
     display: flex;
+    align-items: center;
     justify-content: space-between;
+    width: 100%;
+}
+nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.link-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+nav a{
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
     align-items: center;
 }
 .logo-container>h1{
     font-size: var(--h1);
+}
+.open-sidebar, .closed-sidebar{
+    display: none;
+}
+#sidebar-active{
+    display: none;
 }
 /* HERO SECTION */
 .hero{
@@ -358,11 +373,11 @@ footer {
 
 /* MEDIA QUERIES */
 
-@media screen and (max-width: 768px) {
-    header {
+@media screen and (max-width: 800px) {
+    /* header {
         flex-direction: column;
         padding: 1rem 0;
-    }
+    } */
     
     nav ul {
         margin-top: 1rem;
@@ -384,11 +399,60 @@ footer {
         max-width: calc(100% - 50px);
         margin-left: 50px;
     }
-    
+    i{
+        padding: 20px;
+        font-size: var(--p);
+        color: rgb(255, 255, 255);
+    }
+    .link-container{
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        right:-100%;
+        z-index: 10;
+        width: 80vw;
+        background-color: rgb(6, 2, 29);
+        box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+
+        transition: 1s ease-out;
+    }
+    nav a{
+        box-sizing: border-box;
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        justify-content: flex-start;
+        color: rgb(255, 255, 255);
+    }
+    .open-sidebar, .closed-sidebar{
+        display: block;
+    }
+    #sidebar-active:checked ~ .link-container{
+        right: 0;
+    }
+    #sidebar-active:checked ~ #overlay{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
 }
 
 @media screen and (max-width: 480px) {
-    nav ul {
+    .header{
+        width: 100%;
+    }
+    .hero{
+        width: 100%;
+    }
+    .link-container{
+        width: 80vw;
+    }
+    /* nav ul {
         flex-direction: column;
         align-items: center;
     }
@@ -396,7 +460,7 @@ footer {
     nav ul li {
         margin: 0.5rem 0;
     }
-    
+     */
     .members-container,
     .albums-container {
         grid-template-columns: 1fr;

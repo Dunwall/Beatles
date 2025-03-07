@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="beatles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./beatles-images/logo-bg.png">
+    <script src="https://kit.fontawesome.com/082e9ade44.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -14,12 +15,20 @@
             <h1>The Beatles</h1>
         </div>
         <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#members">Members</a></li>
-                <li><a href="#discography">Discography</a></li>
-                <li><a href="#timeline">Timeline</a></li>
-            </ul>
+            <input type="checkbox" id="sidebar-active">
+            <label for="sidebar-active" class="open-sidebar">
+                <i class="fa fa-bars"></i>
+            </label>
+            <label id="overlay" for="sidebar-active"></label>
+            <div class="link-container">
+            <label for="sidebar-active" class="closed-sidebar">
+                <i class="fa-solid fa-x"></i>
+            </label>
+                <a href="#about">About</a>
+                <a href="#members">Members</a>
+                <a href="#discography">Discography</a>
+                <a href="#timeline">Timeline</a>
+            </div>
         </nav>
     </header>
 
